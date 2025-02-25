@@ -9,5 +9,87 @@
 </head>
 <body>
     
+    <div class="wrapper">
+        <header class="header">
+            <p>librrry</p>
+        </header>
+        <main class="main">
+            <section class="dialog-section">
+                <dialog>
+                    <div class="close-dialog-btn">×</div>
+                    <form action="https://httpbin.org/post" method="dialog" class="form">
+                        <label for="book-title">Title</label>
+                        <input type="text" id="book-title" name="book-title" autofocus>
+        
+                        <label for="book-author">Author</label>
+                        <input type="text" id="book-author" name="book-author">
+        
+                        <label for="book-pages">Pages</label>
+                        <input type="number" id="book-pages" name="book-pages">
+        
+                        <fieldset class="status-fieldset">
+                            <label for="book-status">Status</label>
+                            <select name="book-status" id="book-status">
+                                <option value="read">Read</option>
+                                <option value="not-read" selected>Not Read</option>
+                            </select>
+                        </fieldset>
+        
+                        <button type="submit" class="form-submit-btn">Submit</button>
+                    </form>
+                </dialog>
+                <button class="add-book-btn">+ Add Book</button>
+            </section>
+            <section class="table-section">
+                <table>
+                    <thead class="table-head">
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Pages</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr>
+                            <td>Harry Potter</td>
+                            <td>J.K. Rowling</td>
+                            <td>1000</td>
+                            <td>
+                                <button class="status">Read</button>
+                            </td>
+                            <td>
+                                <button class="remove">Remove</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>The Stand</td>
+                            <td>Stephen King</td>
+                            <td>1000</td>
+                            <td>
+                                <button class="status">Read</button>
+                            </td>
+                            <td>
+                                <button class="remove">Remove</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>War and Peace</td>
+                            <td>Leo Tolstoy</td>
+                            <td>800</td>
+                            <td>
+                                <button class="status">Not Read</button>
+                            </td>
+                            <td>
+                                <button class="remove">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        
+    </div>
+
 </body>
 </html>
