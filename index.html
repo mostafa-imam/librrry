@@ -16,7 +16,10 @@
         <main class="main">
             <section class="dialog-section">
                 <dialog>
-                    <div class="close-dialog-btn">×</div>
+                    <div class="close-dialog-btn-parent">
+                        <div class="close-dialog-btn">×</div>
+                    </div>
+                    <div class="add-book-p">Add New Book</div>
                     <form action="https://httpbin.org/post" method="dialog" class="form">
                         <label for="book-title">Title</label>
                         <input type="text" id="book-title" name="book-title" autofocus>
