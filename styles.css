@@ -6,6 +6,8 @@
     --clr-4: #ff907c;
     --clr-5: #dfdfdf;
     --clr-6: #c4c4c4;
+    --clr-7: #fa7a63;
+    --clr-8: #34fd44;
 
     --fs-1: 1rem;
     --fs-2: 1.333rem;
@@ -263,6 +265,12 @@ form > button {
     border-radius: 10px;
 }
 
+form > button:hover {
+    background-color: var(--clr-8);
+    box-shadow: 0px 0px 3px var(--clr-8);
+    border-color: var(--clr-8);
+}
+
 /* phone styles - table styles */
 .table-section {
     display: grid;
@@ -272,10 +280,9 @@ form > button {
 table {
     grid-column: 2 / 3;
     border-collapse:separate;
-    border-radius: 10px;
 }
 
-table thead {
+thead {
     display: none;
 }
 
@@ -302,10 +309,6 @@ td[data-cell="Pages"] {
 
 td[data-cell="Pages"] {
     margin-bottom: var(--fs-3);
-}
-
-table tr:last-child {
-    border-bottom: none;
 }
 
 td[data-cell="Author"] {
@@ -338,6 +341,12 @@ tr button[class="read"] {
     border-radius: 10px;
 }
 
+tr button[class='read']:hover {
+    background-color: var(--clr-8);
+    box-shadow: 0px 0px 3px var(--clr-8);
+    border-color: var(--clr-8);
+}
+
 tr button[class='not-read'] {
     width: 100%;
     background-color: var(--clr-4);
@@ -347,6 +356,12 @@ tr button[class='not-read'] {
     border-radius: 10px;
 }
 
+tr button[class='not-read']:hover {
+    background-color: var(--clr-7);
+    box-shadow: 0px 0px 3px var(--clr-7);
+    border-color: var(--clr-7);
+}
+
 tr button[class="remove"] {
     width: 100%;
     background-color: var(--clr-5);
@@ -354,6 +369,12 @@ tr button[class="remove"] {
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 10px;
+}
+
+button[class="remove"]:hover {
+    background-color: var(--clr-6);
+    box-shadow: 0px 0px 3px var(--clr-6);
+    border-color: var(--clr-6);
 }
 
 /* tablet styles */
@@ -369,9 +390,15 @@ tr button[class="remove"] {
     }
 
     dialog {
-        width: 30vw;
+        width: 50vw;
     }
 
+    form > input {
+        height: var(--fs-4);
+        font-size: calc(var(--fs-1) + 0.25rem);
+    }
+
+    /* tablet styles - table styles */
     .table-section {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -380,17 +407,79 @@ tr button[class="remove"] {
     table {
         grid-column: 2 / -2;
         border-collapse: collapse;
+        /* border-spacing: var(--fs-1); */
+        
+        display:table;
     }
 
-    table th {
-        text-align: left;
-        display: initial;
+    thead {
+        display: table-header-group;
     }
+
+    tbody {
+        display: table-row-group;
+    }
+
+    tr {
+        display: table-row;
+        border: none;
+    }
+
+    tbody tr:nth-child(odd) {
+        background: #f7f6f6;
+      }
 
     td {
-        display: initial;
+        display: table-cell;
     }
 
+    th {
+        display: table-cell;
+        text-align: left;
+        font-weight: lighter;
+    }
+
+    td,
+    th {
+        padding-top: var(--fs-1);
+        padding-bottom: var(--fs-1);    
+        padding-right: var(--fs-2);
+        padding-left: var(--fs-2);
+    }
+    
+    td[data-cell="Title"] {
+        font-size: var(--fs-1);
+        letter-spacing: initial;
+    }
+
+    td[data-cell="Pages"]::after {
+        content: '';
+    }
+
+    td[data-cell="Status"],
+    td[data-cell="Remove"] {
+        width: fit-content;
+    }
+
+    td[data-cell="Author"] {
+        width: max-content;
+    }
+    
+    tr button[class="read"] {
+        width: 100%;
+    }
+
+    tr button[class='not-read'] {
+        width: 100%;
+    }
+
+    td[data-cell="Status"] {
+        padding: 0px;    
+    }
+
+    td[data-cell="Remove"] {
+        width: 20%;
+    }
 }
 
 /* desktop styles */
@@ -404,4 +493,6 @@ tr button[class="remove"] {
         --fs-5: 6.854rem;
         --fs-small: 0.618rem;
     }
+
+    
 }
