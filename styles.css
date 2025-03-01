@@ -1,0 +1,407 @@
+/* variables */
+:root {
+    --clr-1: #fdfffc;
+    --clr-2: #e9ecef;
+    --clr-3: #48e455;
+    --clr-4: #ff907c;
+    --clr-5: #dfdfdf;
+    --clr-6: #c4c4c4;
+
+    --fs-1: 1rem;
+    --fs-2: 1.333rem;
+    --fs-3: 1.777rem;
+    --fs-4: 2.369rem;
+    --fs-5: 3.157rem;
+    --fs-small: 0.75rem;
+}
+
+/* resets */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+  }
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* fonts */
+@font-face {
+    font-family: 'Zodiak-ExtraBold';
+    src: url('./fonts/Zodiak-Extrabold.woff2') format('woff2'),
+        url('./fonts/Zodiak-Extrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zodiak-BoldItalic';
+    src: url('./fonts/Zodiak-BoldItalic.woff2') format('woff2'),
+        url('./fonts/Zodiak-BoldItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('./fonts/Roboto-Bold.woff2') format('woff2'),
+        url('./fonts/Roboto-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('./fonts/Roboto-Light.woff2') format('woff2'),
+        url('./fonts/Roboto-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('./fonts/Roboto-Regular.woff2') format('woff2'),
+        url('./fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.header > p {
+    font-family: 'Zodiak-BoldItalic', --apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+*,
+input {
+    font-family: 'Roboto-Regular', --apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* base styles */
+body {
+    background-color: var(--clr-1);
+}
+
+* {
+    outline-color: var(--clr-5);
+    text-rendering:optimizeLegibility;
+}
+
+/* phone styles */
+
+.header > p {
+    cursor:default;
+    font-size: var(--fs-5);
+    letter-spacing: var(--fs-1);
+    margin-top: var(--fs-5);
+}
+
+.header > p::selection {
+    background-color: transparent;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--fs-5);
+}
+
+.add-book-btn {
+    font-size: x-large;
+    background-color: var(--clr-1);
+    border: none;
+    border-radius: 5px;
+    padding: var(--fs-1) var(--fs-4);
+}
+
+.add-book-btn:hover {
+    background-color: var(--clr-2);
+    cursor: pointer;
+    box-shadow:  0px 0px 2px var(--clr-5),
+    0px 0px 2px var(--clr-2);
+}
+
+.dialog-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: calc( var(--fs-5) * 2);
+}
+
+/* phone styles - modal dialog */
+
+dialog {
+    margin: auto;
+    border: 1px solid var(--clr-2);
+    border-radius: var(--fs-1);
+    padding: var(--fs-2) var(--fs-1) var(--fs-2) var(--fs-1);
+    position: relative;
+    width: 70vw;
+    box-shadow: 0px 0px 5px var(--clr-6);
+}
+
+.close-dialog-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    width: var(--fs-3);
+    height: var(--fs-3);
+    font-size: xx-large;
+    border-radius: 50%;
+}
+
+.close-dialog-btn:hover {
+    cursor: pointer;
+    background-color: var(--clr-6);
+    /* box-shadow: 0px 0px 5px #f8f8f8; */
+}
+
+.add-book-p {
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    margin-bottom: var(--fs-1);
+    margin-top: var(--fs-3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > input {
+    max-width: 100%;
+    margin-bottom: var(--fs-1);
+    border-radius: 10px;
+    border: 1px solid var(--clr-6);
+    height: var(--fs-5);
+    padding-left: var(--fs-1);
+    font-size: var(--fs-2);
+    outline-color: black;
+}
+
+.status-fieldset {
+    margin-bottom: var(--fs-2);
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--fs-1);
+}
+
+.status-fieldset select {
+    border: 1px solid var(--clr-6);
+    background-color: var(--clr-1);
+    padding: 5px var(--fs-2);
+    padding-right: var(--fs-4);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,<svg width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path d='m0,6l12,12l12,-12l-24,0z'/><path fill='none' d='m0,0l24,0l0,24l-24,0l0,-24z'/></svg>");
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: right 15% top 50%;
+    background-size: var(--fs-1);
+}
+
+form > button {
+    width: 60%;
+    background-color: var(--clr-3);
+    border: 1px solid var(--clr-3);
+    align-self: center;
+    font-size: large;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+/* phone styles - table styles */
+.table-section {
+    display: grid;
+    grid-template-columns: 1fr 80vw 1fr;
+}
+
+table {
+    grid-column: 2 / 3;
+    border-collapse:separate;
+    border-radius: 10px;
+}
+
+table thead {
+    display: none;
+}
+
+tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--clr-6);
+    padding-top: var(--fs-2);
+    padding-bottom: var(--fs-2);
+}
+
+td[data-cell="Title"] {
+    font-size: var(--fs-3);
+    font-weight: bolder;
+    grid-column: 1 / -1;
+    letter-spacing: 5px;
+}
+
+td[data-cell="Author"],
+td[data-cell="Pages"] {
+    grid-column: 1 / -1;
+    color: grey;
+}
+
+td[data-cell="Pages"] {
+    margin-bottom: var(--fs-3);
+}
+
+table tr:last-child {
+    border-bottom: none;
+}
+
+td[data-cell="Author"] {
+    font-style: italic;
+}
+
+td[data-cell="Pages"]::after {
+    content: ' ' attr(data-cell);
+}
+
+td[data-cell="Status"] {
+    grid-column: 1 / -1;
+    margin-bottom: 5px;
+    width: 50%;
+    justify-self: center;
+}
+
+td[data-cell="Remove"] {
+    grid-column: 1 / -1;
+    width: 50%;
+    justify-self: center;
+}
+
+tr button[class="read"] {
+    width: 100%;
+    background-color: var(--clr-3);
+    border: 1px solid var(--clr-3);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+tr button[class='not-read'] {
+    width: 100%;
+    background-color: var(--clr-4);
+    border: 1px solid var(--clr-4);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+tr button[class="remove"] {
+    width: 100%;
+    background-color: var(--clr-5);
+    border: 1px solid var(--clr-5);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+/* tablet styles */
+@media only screen and (min-width: 768px) {
+
+    :root {
+        --fs-1: 1rem;
+        --fs-2: 1.5rem;
+        --fs-3: 2.25rem;
+        --fs-4: 3.375rem;
+        --fs-5: 5.063rem;
+        --fs-small: 0.667rem;
+    }
+
+    dialog {
+        width: 30vw;
+    }
+
+    .table-section {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    table {
+        grid-column: 2 / -2;
+        border-collapse: collapse;
+    }
+
+    table th {
+        text-align: left;
+        display: initial;
+    }
+
+    td {
+        display: initial;
+    }
+
+}
+
+/* desktop styles */
+@media only screen and (min-width: 1024px) {
+
+    :root {
+        --fs-1: 1rem;
+        --fs-2: 1.618rem;
+        --fs-3: 2.618rem;
+        --fs-4: 4.236rem;
+        --fs-5: 6.854rem;
+        --fs-small: 0.618rem;
+    }
+}
