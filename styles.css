@@ -525,4 +525,10 @@ button[class="remove"]:hover {
         font-size: calc(var(--fs-1) + 0.25rem);
     }
 
+    @media only screen and (min-width: 1440px) {
+        dialog {
+            width: 20vw;
+        }
+    }
+
 }
