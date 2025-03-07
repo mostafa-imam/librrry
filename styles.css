@@ -295,32 +295,32 @@ tr {
     padding-bottom: var(--fs-2);
 }
 
-td[data-cell="Title"] {
+td[data-cell="title"] {
     font-size: var(--fs-3);
     font-weight: bolder;
     grid-column: 1 / -1;
     letter-spacing: 5px;
 }
 
-td[data-cell="Author"],
-td[data-cell="Pages"] {
+td[data-cell="author"],
+td[data-cell="pages"] {
     grid-column: 1 / -1;
     color: grey;
 }
 
-td[data-cell="Pages"] {
+td[data-cell="pages"] {
     margin-bottom: var(--fs-3);
 }
 
-td[data-cell="Author"] {
+td[data-cell="author"] {
     font-style: italic;
 }
 
-td[data-cell="Pages"]::after {
+td[data-cell="pages"]::after {
     content: ' ' attr(data-cell);
 }
 
-td[data-cell="Status"] {
+td[data-cell="status"] {
     grid-column: 1 / -1;
     margin-bottom: 5px;
     width: 50%;
@@ -333,7 +333,7 @@ td[data-cell="Remove"] {
     justify-self: center;
 }
 
-tr button[class="read"] {
+tr button[class="Read"] {
     width: 100%;
     background-color: var(--clr-3);
     border: 1px solid var(--clr-3);
@@ -342,13 +342,13 @@ tr button[class="read"] {
     border-radius: 10px;
 }
 
-tr button[class='read']:hover {
+tr button[class='Read']:hover {
     background-color: var(--clr-8);
     box-shadow: 0px 0px 3px var(--clr-8);
     border-color: var(--clr-8);
 }
 
-tr button[class='not-read'] {
+tr button[class='Not Read'] {
     width: 100%;
     background-color: var(--clr-4);
     border: 1px solid var(--clr-4);
@@ -357,7 +357,7 @@ tr button[class='not-read'] {
     border-radius: 10px;
 }
 
-tr button[class='not-read']:hover {
+tr button[class='Not Read']:hover {
     background-color: var(--clr-7);
     box-shadow: 0px 0px 3px var(--clr-7);
     border-color: var(--clr-7);
@@ -448,7 +448,7 @@ button[class="remove"]:hover {
         padding-left: var(--fs-2);
     }
     
-    td[data-cell="Title"] {
+    td[data-cell="title"] {
         font-size: var(--fs-1);
         letter-spacing: initial;
     }
@@ -457,12 +457,12 @@ button[class="remove"]:hover {
         content: '';
     }
 
-    td[data-cell="Status"],
+    td[data-cell="status"],
     td[data-cell="Remove"] {
         width: fit-content;
     }
 
-    td[data-cell="Author"] {
+    td[data-cell="author"] {
         width: max-content;
     }
     
@@ -474,7 +474,7 @@ button[class="remove"]:hover {
         width: 100%;
     }
 
-    td[data-cell="Status"] {
+    td[data-cell="status"] {
         padding: 0px;    
     }
 
