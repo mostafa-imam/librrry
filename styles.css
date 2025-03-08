@@ -67,46 +67,20 @@ p {
 }
 
 /* fonts */
-@font-face {
-    font-family: 'Zodiak-ExtraBold';
-    src: url('./fonts/Zodiak-Extrabold.woff2') format('woff2'),
-        url('./fonts/Zodiak-Extrabold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
 
 @font-face {
     font-family: 'Zodiak-BoldItalic';
-    src: url('./fonts/Zodiak-BoldItalic.woff2') format('woff2'),
-        url('./fonts/Zodiak-BoldItalic.woff') format('woff');
+    src: url('./fonts/Zodiak-BoldItalic.woff') format('woff'),
+        url('./fonts/Zodiak-BoldItalic.woff2') format('woff2');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Roboto-Bold';
-    src: url('./fonts/Roboto-Bold.woff2') format('woff2'),
-        url('./fonts/Roboto-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Roboto-Light';
-    src: url('./fonts/Roboto-Light.woff2') format('woff2'),
-        url('./fonts/Roboto-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'Roboto-Regular';
-    src: url('./fonts/Roboto-Regular.woff2') format('woff2'),
-        url('./fonts/Roboto-Regular.woff') format('woff');
+    src: url('./fonts/Roboto-Regular.woff') format('woff'),
+        url('./fonts/Roboto-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -114,6 +88,10 @@ p {
 
 .header > p {
     font-family: 'Zodiak-BoldItalic', --apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+    font-family: 'Roboto-Regular', --apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 *,
