@@ -135,7 +135,7 @@ body {
 
 .header > p {
     cursor:default;
-    font-size: var(--fs-5);
+    font-size: calc(var(--fs-5) + 2rem);
     letter-spacing: var(--fs-1);
     margin-top: var(--fs-5);
 }
@@ -171,7 +171,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: calc( var(--fs-5) * 2);
+    margin-bottom: calc( var(--fs-5));
 }
 
 /* phone styles - modal dialog */
@@ -184,6 +184,11 @@ dialog {
     position: relative;
     width: 70vw;
     box-shadow: 0px 0px 5px var(--clr-6);
+    z-index: 1;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.651);
 }
 
 .close-dialog-btn {
@@ -203,7 +208,6 @@ dialog {
 .close-dialog-btn:hover {
     cursor: pointer;
     background-color: var(--clr-6);
-    /* box-shadow: 0px 0px 5px #f8f8f8; */
 }
 
 .add-book-p {
@@ -280,7 +284,7 @@ form > button:hover {
 
 table {
     grid-column: 2 / 3;
-    border-collapse:separate;
+    border-collapse: separate;
 }
 
 thead {
@@ -327,12 +331,6 @@ td[data-cell="status"] {
     justify-self: center;
 }
 
-td[data-cell="Remove"] {
-    grid-column: 1 / -1;
-    width: 50%;
-    justify-self: center;
-}
-
 tr button[class="Read"] {
     width: 100%;
     background-color: var(--clr-3);
@@ -361,6 +359,12 @@ tr button[class='Not Read']:hover {
     background-color: var(--clr-7);
     box-shadow: 0px 0px 3px var(--clr-7);
     border-color: var(--clr-7);
+}
+
+td[data-cell="Remove"] {
+    grid-column: 1 / -1;
+    width: 50%;
+    justify-self: center;
 }
 
 tr button[class="remove"] {
@@ -400,21 +404,28 @@ button[class="remove"]:hover {
     }
 
     /* tablet styles - table styles */
+    .header > p {
+        margin-top: var(--fs-3);
+    }
+
     .table-section {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
     }
 
     table {
+        display: table;
         grid-column: 2 / -2;
         border-collapse: collapse;
-        /* border-spacing: var(--fs-1); */
-        
-        display:table;
     }
 
     thead {
         display: table-header-group;
+        border-bottom: 1px solid var(--clr-6);
+    }
+
+    thead th[data-cell='status'] {
+        text-align: center;
     }
 
     tbody {
@@ -451,6 +462,7 @@ button[class="remove"]:hover {
     td[data-cell="title"] {
         font-size: var(--fs-1);
         letter-spacing: initial;
+        font-weight: bolder;
     }
 
     td[data-cell="Pages"]::after {
@@ -504,6 +516,8 @@ button[class="remove"]:hover {
     .header {
         grid-column: 2 / -2;
         background-color: var(--clr-1);
+        margin-bottom: 0;
+        padding-bottom: var(--fs-5);
     }
 
     .main {
@@ -511,9 +525,8 @@ button[class="remove"]:hover {
         background-color: var(--clr-1);
     }
 
-    .header {
-        margin-bottom: 0;
-        padding-bottom: var(--fs-5);
+    .header > p {
+        margin-top: var(--fs-3);
     }
 
     dialog {
@@ -525,10 +538,22 @@ button[class="remove"]:hover {
         font-size: calc(var(--fs-1) + 0.25rem);
     }
 
-    @media only screen and (min-width: 1440px) {
-        dialog {
-            width: 20vw;
-        }
+    td[data-cell="title"] {
+        font-weight: max-content;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    dialog {
+        width: 20vw;
+    }
+
+    .header > p {
+        margin-top: var(--fs-3);
+    }
+
+    td[data-cell="title"] {
+        font-weight: max-content;
     }
 
 }
