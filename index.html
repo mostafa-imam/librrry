@@ -20,12 +20,12 @@
                         <div class="close-dialog-btn">×</div>
                     </div>
                     <div class="add-book-p">Add New Book</div>
-                    <form action="https://httpbin.org/post" method="dialog" class="form">
-                        <input type="text" id="book-title" name="book-title" placeholder="Title" autofocus>
+                    <form action="https://httpbin.org/post" method="post" class="form">
+                        <input type="text" id="book-title" name="book-title" placeholder="Title" autofocus required>
         
-                        <input type="text" id="book-author" name="book-author" placeholder="Author">
+                        <input type="text" id="book-author" name="book-author" placeholder="Author" required>
         
-                        <input type="number" id="book-pages" name="book-pages" placeholder="Pages">
+                        <input type="number" id="book-pages" name="book-pages" placeholder="Pages" required>
         
                         <fieldset class="status-fieldset">
                             <label for="book-status">Status</label>
