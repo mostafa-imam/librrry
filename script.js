@@ -64,18 +64,20 @@ function closeDialog() {
     dialog.close();
 }
 
-function Book(title, author, pages, status) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.status = status;
-}
+class Book {
+    constructor(title, author, pages, status) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.status = status;
+    }
 
-Book.prototype.toggleStatus = function() {
-    if (this.status === "Read") {
-        this.status = "Not Read";
-    } else {
-        this.status = "Read";
+    toggleStatus() {
+        if (this.status === "Read") {
+            this.status = "Not Read";
+        } else {
+            this.status = "Read";
+        }
     }
 }
 
